@@ -2,11 +2,11 @@ import React from 'react';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { Meta } from '../layout/Meta';
-import markdownStyle from '../styles/markdown.module.css';
-import { Main } from '../templates/Main';
-import { getAllPosts, getPostBySlug } from '../utils/content';
-import markdownToHtml from '../utils/markdown';
+import { Meta } from '../../layout/Meta';
+import markdownStyle from '../../styles/markdown.module.css';
+import { Main } from '../../templates/Main';
+import { getAllPosts, getPostBySlug } from '../../utils/content';
+import markdownToHtml from '../../utils/markdown';
 
 type IPostUrl = {
   slug: string;
