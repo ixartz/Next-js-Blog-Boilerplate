@@ -51,17 +51,18 @@ export const getStaticPaths: GetStaticPaths<IPostUrl> = async () => {
 export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ params }) => {
   const post = getPostBySlug(params!.slug, [
     'title',
+    'description',
     'date',
-    'slug',
-    'author',
+    'image',
+    'tags',
     'content',
-    'ogImage',
-    'coverImage',
+    'slug',
   ]);
   const content = await markdownToHtml(post.content || '');
 
   return {
     props: {
+      ...post,
       content,
     },
   };
