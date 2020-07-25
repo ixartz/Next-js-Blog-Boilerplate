@@ -2,6 +2,8 @@ import React from 'react';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
 
+import { Meta } from '../layout/Meta';
+import { Main } from '../templates/Main';
 import { getAllPosts, getPostBySlug } from '../utils/content';
 import markdownToHtml from '../utils/markdown';
 
@@ -13,7 +15,23 @@ type IPostProps = {
   content: string;
 };
 
-const DisplayPost = () => <div>Test</div>;
+const DisplayPost = (props: IPostProps) => (
+  <Main
+    meta={(
+      <Meta
+        title="Lorem ipsum"
+        description="Lorem ipsum"
+        locale="en"
+        site_name="Creative Designs Guru"
+      />
+    )}
+  >
+    <div
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: props.content }}
+    />
+  </Main>
+);
 
 export const getStaticPaths: GetStaticPaths<IPostUrl> = async () => {
   const posts = getAllPosts(['slug']);
