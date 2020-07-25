@@ -3,6 +3,7 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { Meta } from '../layout/Meta';
+import markdownStyle from '../styles/markdown.module.css';
 import { Main } from '../templates/Main';
 import { getAllPosts, getPostBySlug } from '../utils/content';
 import markdownToHtml from '../utils/markdown';
@@ -27,6 +28,7 @@ const DisplayPost = (props: IPostProps) => (
     )}
   >
     <div
+      className={markdownStyle.markdown}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: props.content }}
     />

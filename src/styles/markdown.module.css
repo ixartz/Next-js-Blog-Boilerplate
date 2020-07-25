@@ -1,0 +1,7 @@
+.markdown p {
+  @apply my-6;
+}
+
+.markdown ul {
+  @apply my-6;
+}
