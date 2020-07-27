@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { format } from 'date-fns';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { Meta } from '../../layout/Meta';
-import markdownStyle from '../../styles/markdown.module.css';
 import { Main } from '../../templates/Main';
 import { getAllPosts, getPostBySlug } from '../../utils/content';
 import markdownToHtml from '../../utils/markdown';
@@ -13,6 +13,8 @@ type IPostUrl = {
 };
 
 type IPostProps = {
+  title: string;
+  date: string;
   content: string;
 };
 
@@ -27,8 +29,9 @@ const DisplayPost = (props: IPostProps) => (
       />
     )}
   >
+    <div className="text-center font-bold text-3xl text-gray-900">{props.title}</div>
+    <div className="text-center text-sm mb-8">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
     <div
-      className={markdownStyle.markdown}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: props.content }}
     />
@@ -62,7 +65,8 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ par
 
   return {
     props: {
-      ...post,
+      title: post.title,
+      date: post.date,
       content,
     },
   };

@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 
 import Link from 'next/link';
 
+import contentStyle from '../styles/content.module.css';
+
 type IMainProps = {
   meta: ReactNode;
   children: ReactNode;
@@ -14,8 +16,8 @@ const Main = (props: IMainProps) => (
     <div className="max-w-screen-md mx-auto">
       <div className="border-b border-gray-300">
         <div className="pt-16 pb-8">
-          <div className="font-bold text-3xl text-gray-900">Guru</div>
-          <div className="font-semibold text-xl">Next.js Boilerplate</div>
+          <div className="font-semibold text-3xl text-gray-900">Guru</div>
+          <div className="text-xl">Next.js Boilerplate</div>
         </div>
         <div>
           <ul className="flex flex-wrap text-xl">
@@ -25,7 +27,7 @@ const Main = (props: IMainProps) => (
               </Link>
             </li>
             <li className="mr-6">
-              <Link href="/about">
+              <Link href="/about/">
                 <a className="text-gray-700 border-none hover:text-gray-900">About</a>
               </Link>
             </li>
@@ -41,7 +43,7 @@ const Main = (props: IMainProps) => (
         </div>
       </div>
 
-      <div className="py-5 text-xl content">{props.children}</div>
+      <div className={contentStyle.content}>{props.children}</div>
 
       <div className="border-t border-gray-300 text-center py-8">
         Made with
