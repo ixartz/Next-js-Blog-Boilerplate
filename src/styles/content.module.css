@@ -1,0 +1,11 @@
+.content {
+  @apply text-xl py-5;
+}
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
