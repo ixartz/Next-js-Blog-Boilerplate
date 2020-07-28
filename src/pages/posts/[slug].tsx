@@ -14,7 +14,10 @@ type IPostUrl = {
 
 type IPostProps = {
   title: string;
+  description: string;
   date: string;
+  modified_date: string;
+  image: string;
   content: string;
 };
 
@@ -22,10 +25,13 @@ const DisplayPost = (props: IPostProps) => (
   <Main
     meta={(
       <Meta
-        title="Lorem ipsum"
-        description="Lorem ipsum"
-        locale="en"
-        site_name="Creative Designs Guru"
+        title={props.title}
+        description={props.description}
+        post={{
+          image: props.image,
+          date: props.date,
+          modified_date: props.modified_date,
+        }}
       />
     )}
   >
@@ -56,8 +62,8 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ par
     'title',
     'description',
     'date',
+    'modified_date',
     'image',
-    'tags',
     'content',
     'slug',
   ]);
@@ -66,7 +72,10 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ par
   return {
     props: {
       title: post.title,
+      description: post.description,
       date: post.date,
+      modified_date: post.modified_date,
+      image: post.image,
       content,
     },
   };
