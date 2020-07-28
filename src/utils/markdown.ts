@@ -1,7 +1,17 @@
-import remark from 'remark';
-import html from 'remark-html';
+// TODO: @mapbox/rehype-prism does not have typescript definition
+// @ts-ignore
+import rehypePrism from '@mapbox/rehype-prism';
+import html from 'rehype-stringify';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import unified from 'unified';
 
 export default async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown);
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypePrism)
+    .use(html)
+    .process(markdown);
   return result.toString();
 }
