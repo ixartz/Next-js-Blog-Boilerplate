@@ -5,8 +5,8 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { Meta } from '../../layout/Meta';
 import { Main } from '../../templates/Main';
-import { getAllPosts, getPostBySlug } from '../../utils/content';
-import markdownToHtml from '../../utils/markdown';
+import { getAllPosts, getPostBySlug } from '../../utils/Content';
+import { markdownToHtml } from '../../utils/Markdown';
 
 type IPostUrl = {
   slug: string;
