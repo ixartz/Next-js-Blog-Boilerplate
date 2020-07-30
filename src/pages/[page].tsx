@@ -22,7 +22,7 @@ const PaginatePosts = (props: IPageProps) => (
     <ul>
       {props.posts.map((elt) => (
         <li key={elt.slug} className="mb-3 flex justify-between">
-          <Link href={`/posts/${elt.slug}`}>
+          <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
             <a>{elt.title}</a>
           </Link>
 
