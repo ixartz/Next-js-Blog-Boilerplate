@@ -23,11 +23,7 @@ const Meta = (props: IMetaProps) => {
     <>
       <Head>
         <meta charSet="UTF-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1"
-          key="viewport"
-        />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" key="apple" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" key="icon32" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" key="icon16" />

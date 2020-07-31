@@ -35,7 +35,7 @@ const DisplayPost = (props: IPostProps) => (
       />
     )}
   >
-    <div className="text-center font-bold text-3xl text-gray-900">{props.title}</div>
+    <h1 className="text-center font-bold text-3xl text-gray-900">{props.title}</h1>
     <div className="text-center text-sm mb-8">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
     <div
       // eslint-disable-next-line react/no-danger
