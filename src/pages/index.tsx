@@ -1,38 +1,21 @@
 import React from 'react';
 
 import { GetStaticProps } from 'next';
-import Link from 'next/link';
 
+import { BlogGallery, IBlogGalleryProps } from '../blog/BlogGallery';
 import { Meta } from '../layout/Meta';
-import { Pagination, IPaginationProps } from '../pagination/Pagination';
+import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
-import { getAllPosts, PostItems } from '../utils/Content';
+import { getAllPosts } from '../utils/Content';
 
-type IPageProps = {
-  posts: PostItems[];
-  pagination: IPaginationProps;
-};
-
-const Index = (props: IPageProps) => (
+const Index = (props: IBlogGalleryProps) => (
   <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>
-    <ul>
-      {props.posts.map((elt) => (
-        <li key={elt.slug} className="mb-3 flex justify-between">
-          <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
-            <a>{elt.title}</a>
-          </Link>
-
-          <div>July 2020</div>
-        </li>
-      ))}
-    </ul>
-
-    <Pagination previous={props.pagination.previous} next={props.pagination.next} />
+    <BlogGallery posts={props.posts} pagination={props.pagination} />
   </Main>
 );
 
-export const getStaticProps: GetStaticProps<IPageProps> = async () => {
+export const getStaticProps: GetStaticProps<IBlogGalleryProps> = async () => {
   const posts = getAllPosts(['title', 'date', 'slug']);
   const pagination: IPaginationProps = {};
 
