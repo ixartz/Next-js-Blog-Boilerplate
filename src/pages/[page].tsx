@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 
 import { Meta } from '../layout/Meta';
+import { Pagination, IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
 import { getAllPosts, PostItems } from '../utils/Content';
@@ -15,6 +16,7 @@ type IPageUrl = {
 
 type IPageProps = {
   posts: PostItems[];
+  pagination: IPaginationProps;
 };
 
 const PaginatePosts = (props: IPageProps) => (
@@ -30,6 +32,8 @@ const PaginatePosts = (props: IPageProps) => (
         </li>
       ))}
     </ul>
+
+    <Pagination previous={props.pagination.previous} next={props.pagination.next} />
   </Main>
 );
 
@@ -55,11 +59,25 @@ export const getStaticProps: GetStaticProps<IPageProps, IPageUrl> = async ({ par
   const posts = getAllPosts(['title', 'date', 'slug']);
 
   const pages = convertTo2D(posts, Config.pagination_size);
-  const currentPage = Number(params!.page.replace('page', '')) - 1;
+  const currentPage = Number(params!.page.replace('page', ''));
+  const currentInd = currentPage - 1;
+
+  const pagination: IPaginationProps = {};
+
+  if (currentPage < pages.length) {
+    pagination.next = `page${currentPage + 1}`;
+  }
+
+  if (currentPage === 2) {
+    pagination.previous = '/';
+  } else {
+    pagination.previous = `page${currentPage - 1}`;
+  }
 
   return {
     props: {
-      posts: pages[currentPage],
+      posts: pages[currentInd],
+      pagination,
     },
   };
 };

@@ -37,10 +37,7 @@ export const getStaticProps: GetStaticProps<IPageProps> = async () => {
   const pagination: IPaginationProps = {};
 
   if (posts.length > Config.pagination_size) {
-    pagination.next = {
-      href: '/[page]',
-      as: '/page2',
-    };
+    pagination.next = '/page2';
   }
 
   return {

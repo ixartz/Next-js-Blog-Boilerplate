@@ -2,21 +2,18 @@ import React from 'react';
 
 import Link from 'next/link';
 
-type IPaginationLinkProps = {
-  href: string;
-  as: string;
-};
+import { convertUrlToLinkHref } from '../utils/Pagination';
 
 export type IPaginationProps = {
-  previous?: IPaginationLinkProps;
-  next?: IPaginationLinkProps;
+  previous?: string;
+  next?: string;
 };
 
 const Pagination = (props: IPaginationProps) => (
   <div className="text-sm flex justify-between">
     {props.previous && (
       <div>
-        <Link href={props.previous.href} as={props.previous.as}>
+        <Link href={convertUrlToLinkHref(props.previous)} as={props.previous}>
           <a>← Newer Posts</a>
         </Link>
       </div>
@@ -24,7 +21,7 @@ const Pagination = (props: IPaginationProps) => (
 
     {props.next && (
       <div className="text-right ml-auto">
-        <Link href={props.next.href} as={props.next.as}>
+        <Link href={convertUrlToLinkHref(props.next)} as={props.next}>
           <a>Older Posts →</a>
         </Link>
       </div>
