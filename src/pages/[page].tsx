@@ -7,7 +7,7 @@ import { Meta } from '../layout/Meta';
 import { Main } from '../templates/Main';
 import { Config } from '../utils/Config';
 import { getAllPosts, PostItems } from '../utils/Content';
-import { convertTo2D } from '../utils/Paginate';
+import { convertTo2D } from '../utils/Pagination';
 
 type IPageUrl = {
   page: string;
