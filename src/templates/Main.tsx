@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 
 import Link from 'next/link';
 
+import { Content } from '../content/Content';
 import { Navbar } from '../navigation/Navbar';
-import contentStyle from '../styles/content.module.css';
 
 type IMainProps = {
   meta: ReactNode;
@@ -39,7 +39,7 @@ const Main = (props: IMainProps) => (
         </div>
       </div>
 
-      <div className={contentStyle.content}>{props.children}</div>
+      <Content>{props.children}</Content>
 
       <div className="border-t border-gray-300 text-center py-8">
         Made with
