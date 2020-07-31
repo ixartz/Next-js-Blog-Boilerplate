@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { Content } from '../content/Content';
 import { Navbar } from '../navigation/Navbar';
+import { Config } from '../utils/Config';
 
 type IMainProps = {
   meta: ReactNode;
@@ -17,8 +18,8 @@ const Main = (props: IMainProps) => (
     <div className="max-w-screen-md mx-auto">
       <div className="border-b border-gray-300">
         <div className="pt-16 pb-8">
-          <div className="font-semibold text-3xl text-gray-900">Guru</div>
-          <div className="text-xl">Next.js Boilerplate</div>
+          <div className="font-semibold text-3xl text-gray-900">{Config.title}</div>
+          <div className="text-xl">{Config.description}</div>
         </div>
         <div>
           <Navbar>
