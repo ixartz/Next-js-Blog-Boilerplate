@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 
 import Link from 'next/link';
 
+import { Navbar } from '../navigation/Navbar';
 import contentStyle from '../styles/content.module.css';
 
 type IMainProps = {
@@ -20,26 +21,21 @@ const Main = (props: IMainProps) => (
           <div className="text-xl">Next.js Boilerplate</div>
         </div>
         <div>
-          <ul className="flex flex-wrap text-xl">
+          <Navbar>
             <li className="mr-6">
               <Link href="/">
-                <a className="text-gray-700 hover:no-underline hover:text-gray-900">Home</a>
+                <a>Home</a>
               </Link>
             </li>
             <li className="mr-6">
               <Link href="/about/">
-                <a className="text-gray-700 hover:no-underline hover:text-gray-900">About</a>
+                <a>About</a>
               </Link>
             </li>
             <li className="mr-6">
-              <a
-                className="text-gray-700 hover:no-underline hover:text-gray-900"
-                href="https://github.com/ixartz/Next-js-Boilerplate"
-              >
-                GitHub
-              </a>
+              <a href="https://github.com/ixartz/Next-js-Boilerplate">GitHub</a>
             </li>
-          </ul>
+          </Navbar>
         </div>
       </div>
 

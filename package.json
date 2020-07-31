@@ -24,6 +24,7 @@
     "rehype-stringify": "^8.0.0",
     "remark-parse": "^8.0.3",
     "remark-rehype": "^7.0.0",
+    "styled-jsx-plugin-postcss": "^2.0.1",
     "unified": "^9.1.0"
   },
   "license": "ISC",
