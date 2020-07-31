@@ -19,8 +19,6 @@
     "next-seo": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
     "rehype-stringify": "^8.0.0",
     "remark-parse": "^8.0.3",
     "remark-rehype": "^7.0.0",
