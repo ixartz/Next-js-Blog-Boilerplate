@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { format } from 'date-fns';
 import Link from 'next/link';
 
 import { Pagination, IPaginationProps } from '../pagination/Pagination';
@@ -19,7 +20,7 @@ const BlogGallery = (props: IBlogGalleryProps) => (
             <a>{elt.title}</a>
           </Link>
 
-          <div>July 2020</div>
+          <div>{format(new Date(elt.date), 'LLL d, yyyy')}</div>
         </li>
       ))}
     </ul>
