@@ -3,6 +3,7 @@ import React from 'react';
 import { format } from 'date-fns';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
+import { Content } from '../../content/Content';
 import { Meta } from '../../layout/Meta';
 import { Main } from '../../templates/Main';
 import { getAllPosts, getPostBySlug } from '../../utils/Content';
@@ -37,10 +38,13 @@ const DisplayPost = (props: IPostProps) => (
   >
     <h1 className="text-center font-bold text-3xl text-gray-900">{props.title}</h1>
     <div className="text-center text-sm mb-8">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
-    <div
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: props.content }}
-    />
+
+    <Content>
+      <div
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: props.content }}
+      />
+    </Content>
   </Main>
 );
 

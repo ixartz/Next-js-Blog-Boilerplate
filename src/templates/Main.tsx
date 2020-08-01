@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react';
 
 import Link from 'next/link';
 
-import { Content } from '../content/Content';
 import { Navbar } from '../navigation/Navbar';
 import { Config } from '../utils/Config';
 
@@ -40,7 +39,7 @@ const Main = (props: IMainProps) => (
         </div>
       </div>
 
-      <Content>{props.children}</Content>
+      <div className="text-xl py-5">{props.children}</div>
 
       <div className="border-t border-gray-300 text-center py-8">
         Made with
