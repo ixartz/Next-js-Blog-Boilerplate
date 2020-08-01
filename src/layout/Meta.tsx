@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { Config } from '../utils/Config';
+import { addTrailingSlash } from '../utils/Url';
 
 type IMetaProps = {
   title: string;
@@ -91,7 +92,7 @@ const Meta = (props: IMetaProps) => {
               "name": "${Config.author}"
             },
             "@type": "BlogPosting",
-            "url": "${Config.url}${router.asPath}",
+            "url": "${Config.url}${process.env.baseUrl}${addTrailingSlash(router.asPath)}",
             "publisher": {
               "@type": "Organization",
               "logo": {
@@ -106,7 +107,7 @@ const Meta = (props: IMetaProps) => {
             "dateModified": "${new Date(props.post.modified_date).toISOString()}",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "${Config.url}${router.asPath}"
+              "@id": "${Config.url}${process.env.baseUrl}${addTrailingSlash(router.asPath)}"
             },
             "@context": "http://schema.org"
           }`,
