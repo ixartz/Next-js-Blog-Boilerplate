@@ -13,5 +13,5 @@ export async function markdownToHtml(markdown: string) {
     .use(rehypePrism)
     .use(html)
     .process(markdown);
-  return result.toString();
+  return result.toString().replace(/@@baseUrl@@/g, process.env.baseUrl || '');
 }

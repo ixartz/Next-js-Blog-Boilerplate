@@ -10,7 +10,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Example with image:
 
-![Error](/assets/images/posts/error.png)
+![Error](@@baseUrl@@/assets/images/posts/error.png)
 
 Example code block:
 
