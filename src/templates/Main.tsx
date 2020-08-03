@@ -33,7 +33,7 @@ const Main = (props: IMainProps) => (
               </Link>
             </li>
             <li className="mr-6">
-              <a href="https://github.com/ixartz/Next-js-Boilerplate">GitHub</a>
+              <a href="https://github.com/ixartz/Next-js-Blog-Boilerplate">GitHub</a>
             </li>
           </Navbar>
         </div>

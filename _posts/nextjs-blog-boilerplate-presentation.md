@@ -12,6 +12,8 @@ image: /assets/images/posts/random-img.jpg
 
 Clone this project and use it to create your own [Next.js](https://nextjs.org) blog. You can check a [Next js blog templates demo](https://creativedesignsguru.com/demo/Nextjs-Blog-Boilerplate/).
 
+The GitHub repository is located [Next js Blog Boilerplate](https://github.com/ixartz/Next-js-Blog-Boilerplate).
+
 ### Features
 
 Blog feature:
@@ -123,4 +125,8 @@ Everyone is welcome to contribute to this project. Feel free to open an issue if
 
 Licensed under the MIT License, Copyright © 2020
 
-See [LICENSE](LICENSE) for more information.
+See [LICENSE](https://github.com/ixartz/Next-js-Blog-Boilerplate#license) for more information.
+
+### GitHub
+
+The GitHub repository is located [Nextjs Blog Boilerplate](https://github.com/ixartz/Next-js-Blog-Boilerplate).
