@@ -15,7 +15,6 @@ type IMetaProps = {
     date: string;
     modified_date: string;
   };
-  title2?: string;
 };
 
 const Meta = (props: IMetaProps) => {
