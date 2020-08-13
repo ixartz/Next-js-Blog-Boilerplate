@@ -45,7 +45,7 @@ const Meta = (props: IMetaProps) => {
           key="icon16"
         />
         <link rel="icon" href={`${process.env.baseUrl}/favicon.ico`} key="favicon" />
-        <title>{`${props.title} | ${Config.title}`}</title>
+        <title>{`${props.title} | ${Config.site_name}`}</title>
         <meta
           name="description"
           content={props.description ? props.description : Config.description}
@@ -53,7 +53,7 @@ const Meta = (props: IMetaProps) => {
         />
         <meta name="author" content={Config.author} key="author" />
         {props.canonical && <link rel="canonical" href={props.canonical} key="canonical" />}
-        <meta property="og:title" content={`${props.title} | ${Config.title}`} key="og:title" />
+        <meta property="og:title" content={`${props.title} | ${Config.site_name}`} key="og:title" />
         <meta
           property="og:description"
           content={props.description ? props.description : Config.description}
@@ -101,7 +101,7 @@ const Meta = (props: IMetaProps) => {
               },
               "name": "${Config.author}"
             },
-            "headline": "${props.title} | ${Config.title}",
+            "headline": "${props.title} | ${Config.site_name}",
             "image": ["${Config.url}${process.env.baseUrl}${props.post.image}"],
             "datePublished": "${new Date(props.post.date).toISOString()}",
             "dateModified": "${new Date(props.post.modified_date).toISOString()}",
