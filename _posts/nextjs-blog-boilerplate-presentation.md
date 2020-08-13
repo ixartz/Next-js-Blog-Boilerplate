@@ -6,7 +6,9 @@ modified_date: '2020-06-01'
 image: /assets/images/posts/random-img.jpg
 ---
 
-# Next js Blog Boilerplate
+[![Nextjs starter banner](@@baseUrl@@/assets/images/nextjs-starter-banner.png)](https://creativedesignsguru.com/demo/Nextjs-Blog-Boilerplate/)
+
+## Next js Blog Boilerplate
 
 🚀 Next.js Blog Boilerplate is starter code for your blog based on Next.js framework. ⚡️ Made with [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), [ESLint](https://eslint.org), [Prettier](https://prettier.io), [PostCSS](https://postcss.org), [Tailwind CSS](https://tailwindcss.com).
 

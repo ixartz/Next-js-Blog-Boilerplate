@@ -1,5 +1,9 @@
 # Next js Blog Boilerplate
 
+<p align="center">
+  <a href="https://creativedesignsguru.com/demo/Nextjs-Blog-Boilerplate/"><img src="public/assets/images/nextjs-starter-banner.png?raw=true" alt="Nextjs starter banner"></a>
+</p>
+
 🚀 Next.js Blog Boilerplate is starter code for your blog based on Next.js framework. ⚡️ Made with [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), [ESLint](https://eslint.org), [Prettier](https://prettier.io), [PostCSS](https://postcss.org), [Tailwind CSS](https://tailwindcss.com).
 
 Clone this project and use it to create your own [Next.js](https://nextjs.org) blog. You can check a [Next js blog templates demo](https://creativedesignsguru.com/demo/Nextjs-Blog-Boilerplate/).
@@ -119,4 +123,4 @@ See [LICENSE](LICENSE) for more information.
 
 ---
 
-Made with ♥ by [Ixartz](https://github.com/ixartz)
+Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com)
