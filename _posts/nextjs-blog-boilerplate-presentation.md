@@ -24,6 +24,7 @@ Blog feature:
 - 🤖 SEO metadata and Open Graph tags
 - ⚙️ JSON-LD for richer indexing
 - 📖 Pagination
+- 🌈 Include a FREE minimalist blog theme
 - ⬇️ Markdown
 - 💯 Maximize lighthouse score
 
