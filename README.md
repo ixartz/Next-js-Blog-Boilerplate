@@ -32,7 +32,7 @@ Developer experience first:
 
 Built-in feature from Next.js:
 
-- ☕ Minify HTML & CSS with [HTMLMinifier](https://www.npmjs.com/package/html-minifier)
+- ☕ Minify HTML & CSS
 - 💨 Live reload
 - ✅ Cache busting
 
