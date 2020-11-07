@@ -29,6 +29,7 @@ Developer experience first:
 - ✏️ Linter with [ESLint](https://eslint.org)
 - 🛠 Code Formatter with [Prettier](https://prettier.io)
 - 🦊 SEO metadata, [JSON-LD](https://developers.google.com/search/docs/guides/intro-structured-data) and [Open Graph](https://ogp.me/) tags with [Next SEO](https://github.com/garmeeh/next-seo)
+- ⚙️ [Bundler Analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
 
 Built-in feature from Next.js:
 
