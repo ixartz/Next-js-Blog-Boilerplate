@@ -23,7 +23,7 @@ const Meta = (props: IMetaProps) => {
   return (
     <>
       <Head>
-        <meta charSet="UTF-8" />
+        <meta charSet="UTF-8" key="charset" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link
           rel="apple-touch-icon"
