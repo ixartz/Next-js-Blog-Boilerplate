@@ -22,7 +22,7 @@ const BlogGallery = (props: IBlogGalleryProps) => (
             </a>
           </Link>
 
-          <div>{format(new Date(elt.date), 'LLL d, yyyy')}</div>
+          <div className="text-right">{format(new Date(elt.date), 'LLL d, yyyy')}</div>
         </li>
       ))}
     </ul>

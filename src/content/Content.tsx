@@ -10,6 +10,10 @@ const Content = (props: IContentProps) => (
 
     <style jsx>
       {`
+        .content :global(*) {
+          @apply break-words;
+        }
+
         .content :global(p) {
           @apply my-6;
         }
