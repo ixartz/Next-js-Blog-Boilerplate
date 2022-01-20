@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import Link from 'next/link';
 
 import { Navbar } from '../navigation/Navbar';
-import { Config } from '../utils/Config';
+import { AppConfig } from '../utils/AppConfig';
 
 type IMainProps = {
   meta: ReactNode;
@@ -17,8 +17,10 @@ const Main = (props: IMainProps) => (
     <div className="max-w-screen-md mx-auto">
       <div className="border-b border-gray-300">
         <div className="pt-16 pb-8">
-          <div className="font-semibold text-3xl text-gray-900">{Config.title}</div>
-          <div className="text-xl">{Config.description}</div>
+          <div className="font-semibold text-3xl text-gray-900">
+            {AppConfig.title}
+          </div>
+          <div className="text-xl">{AppConfig.description}</div>
         </div>
         <div>
           <Navbar>
@@ -33,7 +35,9 @@ const Main = (props: IMainProps) => (
               </Link>
             </li>
             <li className="mr-6">
-              <a href="https://github.com/ixartz/Next-js-Blog-Boilerplate">GitHub</a>
+              <a href="https://github.com/ixartz/Next-js-Blog-Boilerplate">
+                GitHub
+              </a>
             </li>
           </Navbar>
         </div>
@@ -42,20 +46,11 @@ const Main = (props: IMainProps) => (
       <div className="text-xl py-5">{props.children}</div>
 
       <div className="border-t border-gray-300 text-center py-8 text-sm">
-        © Copyright
-        {' '}
-        {new Date().getFullYear()}
-        {' '}
-        {Config.title}
-        . Powered with
-        {' '}
+        © Copyright {new Date().getFullYear()} {AppConfig.title}. Powered with{' '}
         <span role="img" aria-label="Love">
           ♥
-        </span>
-        {' '}
-        by
-        {' '}
-        <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
+        </span>{' '}
+        by <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
         {/*
          * PLEASE READ THIS SECTION
          * We'll really appreciate if you could have a link to our website

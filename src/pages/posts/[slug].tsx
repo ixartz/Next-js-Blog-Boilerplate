@@ -24,7 +24,7 @@ type IPostProps = {
 
 const DisplayPost = (props: IPostProps) => (
   <Main
-    meta={(
+    meta={
       <Meta
         title={props.title}
         description={props.description}
@@ -34,10 +34,14 @@ const DisplayPost = (props: IPostProps) => (
           modified_date: props.modified_date,
         }}
       />
-    )}
+    }
   >
-    <h1 className="text-center font-bold text-3xl text-gray-900">{props.title}</h1>
-    <div className="text-center text-sm mb-8">{format(new Date(props.date), 'LLLL d, yyyy')}</div>
+    <h1 className="text-center font-bold text-3xl text-gray-900">
+      {props.title}
+    </h1>
+    <div className="text-center text-sm mb-8">
+      {format(new Date(props.date), 'LLLL d, yyyy')}
+    </div>
 
     <Content>
       <div
@@ -61,7 +65,9 @@ export const getStaticPaths: GetStaticPaths<IPostUrl> = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({
+  params,
+}) => {
   const post = getPostBySlug(params!.slug, [
     'title',
     'description',

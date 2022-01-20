@@ -22,12 +22,17 @@ const BlogGallery = (props: IBlogGalleryProps) => (
             </a>
           </Link>
 
-          <div className="text-right">{format(new Date(elt.date), 'LLL d, yyyy')}</div>
+          <div className="text-right">
+            {format(new Date(elt.date), 'LLL d, yyyy')}
+          </div>
         </li>
       ))}
     </ul>
 
-    <Pagination previous={props.pagination.previous} next={props.pagination.next} />
+    <Pagination
+      previous={props.pagination.previous}
+      next={props.pagination.next}
+    />
   </>
 );
 

@@ -6,7 +6,7 @@ import { BlogGallery, IBlogGalleryProps } from '../blog/BlogGallery';
 import { Meta } from '../layout/Meta';
 import { IPaginationProps } from '../pagination/Pagination';
 import { Main } from '../templates/Main';
-import { Config } from '../utils/Config';
+import { AppConfig } from '../utils/AppConfig';
 import { getAllPosts } from '../utils/Content';
 import { convertTo2D } from '../utils/Pagination';
 
@@ -23,7 +23,7 @@ const PaginatePosts = (props: IBlogGalleryProps) => (
 export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
   const posts = getAllPosts(['slug']);
 
-  const pages = convertTo2D(posts, Config.pagination_size);
+  const pages = convertTo2D(posts, AppConfig.pagination_size);
 
   return {
     paths: pages.slice(1).map((_, ind) => ({
@@ -38,10 +38,13 @@ export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<IBlogGalleryProps, IPageUrl> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<
+  IBlogGalleryProps,
+  IPageUrl
+> = async ({ params }) => {
   const posts = getAllPosts(['title', 'date', 'slug']);
 
-  const pages = convertTo2D(posts, Config.pagination_size);
+  const pages = convertTo2D(posts, AppConfig.pagination_size);
   const currentPage = Number(params!.page.replace('page', ''));
   const currentInd = currentPage - 1;
 
