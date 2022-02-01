@@ -47,6 +47,12 @@ Built-in feature from Next.js:
 
 - Node.js and npm
 
+### Nextless.js SaaS Boilerplate
+
+Build your SaaS product faster with [React SaaS Boilerplate](https://nextlessjs.com).
+
+[![React SaaS Boilerplate Next.js](https://creativedesignsguru.com/assets/images/themes/next-js-saas-starter-kit.jpg)](https://nextlessjs.com)
+
 ### Premium Themes ([Nextjs Themes](https://creativedesignsguru.com/category/nextjs/))
 
 | [Blue Dark Nextjs Theme](https://creativedesignsguru.com/blue-dark-nextjs-theme/) | [Blue Eclatant Nextjs Theme](https://creativedesignsguru.com/blue-eclatant-nextjs-theme/) |
@@ -129,7 +135,7 @@ Everyone is welcome to contribute to this project. Feel free to open an issue if
 
 ### License
 
-Licensed under the MIT License, Copyright © 2020
+Licensed under the MIT License, Copyright © 2022
 
 See [LICENSE](LICENSE) for more information.
 
