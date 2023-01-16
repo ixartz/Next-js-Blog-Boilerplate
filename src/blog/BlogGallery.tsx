@@ -15,15 +15,18 @@ const BlogGallery = (props: IBlogGalleryProps) => (
   <>
     <ul>
       {props.posts.map((elt) => (
-        <li key={elt.slug} className="mb-3 flex justify-between">
+        <li key={elt.slug} className="mb-3 ">
           <Link href="/posts/[slug]" as={`/posts/${elt.slug}`}>
             <a>
-              <h2>{elt.title}</h2>
+              <h3 className="text-3xl text-black font-bold">{elt.title}</h3>
             </a>
           </Link>
-
-          <div className="text-right">
-            {format(new Date(elt.date), 'LLL d, yyyy')}
+          <p className="line-clamp-2 mb-2">{elt.description}</p>
+          <div className=" flex text-lg text-gray-800 justify-between">
+            <div className="text-left">{elt.author}</div>
+            <div className="text-right">
+              {format(new Date(elt.date), 'LLL d, yyyy')}
+            </div>
           </div>
         </li>
       ))}

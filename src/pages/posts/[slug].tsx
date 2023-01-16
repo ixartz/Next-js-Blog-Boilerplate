@@ -19,6 +19,7 @@ type IPostProps = {
   date: string;
   modified_date: string;
   image: string;
+  author: string;
   content: string;
 };
 
@@ -39,12 +40,17 @@ const DisplayPost = (props: IPostProps) => (
     <h1 className="text-center font-bold text-3xl text-gray-900">
       {props.title}
     </h1>
-    <div className="text-center text-sm mb-8">
-      {format(new Date(props.date), 'LLLL d, yyyy')}
+    <div className="flex justify-center">
+      <div className="text-center px-2 text-sm mb-8">
+        {format(new Date(props.date), 'LLLL d, yyyy')}
+      </div>
+
+      <div className="text-center px-2 text-sm mb-8">{props.author}</div>
     </div>
 
     <Content>
       <div
+        className="prose prose-xl"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: props.content }}
       />
@@ -76,6 +82,7 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({
     'image',
     'content',
     'slug',
+    'author',
   ]);
   const content = await markdownToHtml(post.content || '');
 
@@ -86,6 +93,7 @@ export const getStaticProps: GetStaticProps<IPostProps, IPostUrl> = async ({
       date: post.date,
       modified_date: post.modified_date,
       image: post.image,
+      author: post.author,
       content,
     },
   };
