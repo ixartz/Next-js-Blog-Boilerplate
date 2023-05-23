@@ -1,11 +1,11 @@
 export function convertTo2D<T>(arr: T[], size: number) {
   const res: T[][] = [];
 
-  arr.forEach((element, index) => {
-    if (index % size === 0) {
-      res.push([element]);
+  arr.forEach((elt, ind) => {
+    if (ind % size === 0) {
+      res.push([elt]);
     } else {
-      res[res.length - 1].push(element);
+      res[res.length - 1].push(elt);
     }
   });
 
