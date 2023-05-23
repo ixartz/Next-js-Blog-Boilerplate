@@ -94,6 +94,28 @@ Open http://localhost:3000 with your favorite browser to see your project.
     └── templates     # Blog templates
 ```
 
+#### Run in Docker
+
+**Prerequisites:**
+
+- Docker: Make sure you have Docker installed on your computer. If Docker is not installed, you can download and install it from the official website: [https://www.docker.com/](https://www.docker.com/)
+
+**By using Docker Compose:**
+
+1. Open a terminal and navigate to the project's root directory.
+2. Use the following command to start the application in Docker:
+   - Run in attached mode: `docker compose up`
+   - Run in detached mode (in the background): `docker compose up -d`
+
+The Next.js application will be available at [http://localhost:3000](http://localhost:3000) in your web browser.
+
+**By building the Docker image directly:**
+
+1. Open a terminal and navigate to the project's root directory.
+2. Build the Docker image using the following command: `docker build -t nextjs-blog-boilerplate .`
+3. Once the image is built, run a container based on the image with the following command: `docker run -p 3000:3000 nextjs-blog-boilerplate`
+4. The container will start, and the Next.js application will be available at [http://localhost:3000](http://localhost:3000) in your web browser.
+
 ### Customization
 
 You can easily configure Next js Boilerplate. Please change the following file:
