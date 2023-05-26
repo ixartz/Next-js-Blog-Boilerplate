@@ -26,12 +26,12 @@ export const getStaticPaths: GetStaticPaths<IPageUrl> = async () => {
   const pages = convertTo2D(posts, AppConfig.pagination_size);
 
   return {
-    paths: pages.slice(1).map((_, ind) => ({
+    paths: pages.slice(1).map((_, index) => ({
       params: {
-        // Ind starts from zero so we need to do ind + 1
-        // slice(1) removes the first page so we do another ind + 1
+        // Index starts from zero so we need to do index + 1
+        // slice(1) removes the first page so we do another index + 1
         // the first page is implemented in index.tsx
-        page: `page${ind + 2}`,
+        page: `page${index + 2}`,
       },
     })),
     fallback: false,
@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps<
 
   const pages = convertTo2D(posts, AppConfig.pagination_size);
   const currentPage = Number(params!.page.replace('page', ''));
-  const currentInd = currentPage - 1;
+  const currentIndex = currentPage - 1;
 
   const pagination: IPaginationProps = {};
 
@@ -62,7 +62,7 @@ export const getStaticProps: GetStaticProps<
 
   return {
     props: {
-      posts: pages[currentInd],
+      posts: pages[currentIndex],
       pagination,
     },
   };
