@@ -1,9 +1,11 @@
 import React, { ReactNode } from 'react';
 
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
-import Navbar from '../components/navbar/Navbar';
 import { AppConfig } from '../utils/AppConfig';
+
+const Navbar = dynamic(() => import('../components/navbar/Navbar'));
 
 type IMainProps = {
   meta: ReactNode;
@@ -11,7 +13,7 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="antialiased w-full text-gray-700 px-3 md:px-0">
+  <div className="antialiased w-full text-gray-700 px-0">
     {props.meta}
     <Navbar />
     <div className="max-w-screen-md mx-auto">
