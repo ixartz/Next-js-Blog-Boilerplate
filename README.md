@@ -122,7 +122,7 @@ Built-in feature from Next.js:
 
 ### Getting started
 
-Run the following command on your local environment:
+Run the following command on your local environment (for example, in [Warp](https://go.warp.dev/nextjs-bp)):
 
 ```
 git clone --depth=1 https://github.com/ixartz/Next-js-Blog-Boilerplate.git my-project-name
